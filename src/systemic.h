@@ -61,9 +61,7 @@
 #define T_GUI 10
 #define T_SCRATCH 10
 
-#define X 1
-#define Y 2
-#define Z 3
+
 #define VX 4
 #define VY 5
 #define VZ 6

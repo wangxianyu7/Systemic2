@@ -23,7 +23,7 @@ FFLAGS='-c -g -fPIC'
 #UPDATE = --update --java
 UPDATE =
 
-ALLOBJECTS = objects/swift.o objects/periodogram.o objects/extras.o objects/mercury.o objects/integration.o objects/mcmc.o objects/utils.o objects/simplex.o objects/kernel.o objects/bootstrap.o objects/kl.o objects/qsortimp.o objects/lm.o objects/lm.o objects/hermite.o objects/ode.o objects/odex.o objects/sa.o objects/de.o
+ALLOBJECTS = objects/swift.o objects/periodogram.o objects/extras.o objects/mercury.o objects/integration.o objects/mcmc.o objects/utils.o objects/simplex.o objects/kernel.o objects/bootstrap.o objects/kl.o objects/qsortimp.o objects/lm.o objects/lm.o objects/hermite.o objects/ode.o objects/odex.o objects/sa.o objects/de.o objects/gd.o
 
 linux: reqs src/*.c src/*.h  $(ALLOBJECTS)
 	gcc -shared -o libsystemic.so objects/*.o $(LIBS) $(LIBNAMES) 
@@ -86,6 +86,9 @@ objects/sa.o: src/sa.c
 
 objects/de.o: src/de.c
 	$(CC) $(CCFLAGS) $(SYSFLAGS) -c -o objects/de.o src/de.c
+
+objects/gd.o: src/gd.c
+	$(CC) $(CCFLAGS) $(SYSFLAGS) -c -o objects/gd.o src/gd.c
 
 .PHONY: clean cleanreqs
 

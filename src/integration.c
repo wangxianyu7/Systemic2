@@ -14,11 +14,9 @@
 #ifndef JAVASCRIPT
 #include "swift.h"
 #endif
-
 #define X 1
 #define Y 2
 #define Z 3
-
 int ok_last_error(ok_system* system) {
     if (system->flag & INTEGRATION_FAILURE_CLOSE_ENCOUNTER)
         return INTEGRATION_FAILURE_CLOSE_ENCOUNTER;

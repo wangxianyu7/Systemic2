@@ -8,20 +8,12 @@ sudo add-apt-repository universe
 sudo apt update
 sudo apt install gfortran
 # install R
-sudo apt-get install r-base
-
+conda install conda-forge::r-base==4.0.5
+# install Java; Java 11.0.12 works for me; current is javac 21.0.4
 # isntall gsl-1.15
-sudo apt-get install libgsl-dev
-tar -xvzf deps.tar.gz
-cd deps/gsl; tar -xvzf gsl-1.15.tar.gz; cd gsl-1.15; ./configure --prefix='$(shell pwd)/deps'; make; make install
+make -f Makefile.linux gsl
 
 (R) install.packages("rdyncall", repos="http://R-Forge.R-project.org")
-(R) install.packages("stringr")
-(R) install.packages("Hmisc")
-(R) install.packages("magrittr")
-(R) install.packages("xtable")
-(R) install.packages("latex2exp")
-
 (R) q()
 
 ```

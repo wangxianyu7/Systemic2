@@ -4,11 +4,11 @@
 # 2012, Stefano Meschiari (http://www.stefanom.org)
 #
 # Please modify these paths:
-CC = /usr/local/bin/gcc
+CC = /usr/local/bin/gcc-5
 FORTRAN = /usr/local/bin/gfortran
 # If you have installed GSL & company in non-standard places, add them here:
 LIBS = -L./deps/lib -L/opt/local/lib -L/usr/local/lib
-INCLUDES = -I./deps/include -I/opt/local/include -I/opt/local/include
+INCLUDES = -I./deps/include -I/opt/local/include -I/opt/local/include -I/usr/local/include
 LIBNAMES = -lm -lgsl -lgslcblas -lgfortran -lc -lswift -lf2c  
 PACKAGE_DIR = ~/Downloads
 FFLAGS='-c -g -O3'
@@ -24,7 +24,7 @@ UPDATE =
 ALLOBJECTS = objects/swift.o objects/periodogram.o objects/extras.o objects/mercury.o objects/integration.o objects/mcmc.o objects/utils.o objects/simplex.o objects/kernel.o objects/bootstrap.o objects/kl.o objects/qsortimp.o objects/lm.o objects/lm.o objects/hermite.o objects/ode.o objects/odex.o objects/sa.o objects/de.o objects/gd.o
 
 # Only used when building Mac binary
-LUA=/opt/local/bin/lua
+LUA=/usr/local/bin/luajit
 
 
 
@@ -131,6 +131,7 @@ update_ui:
 	cd ../SystemicGui; ant jar
 
 package: update_binding clean cleanreqs reqs  macosx utils/systemic_cli update_ui
+	chmod -R a+rw deps R
 	$(LUA) lua/libs.lua libsystemic.dylib
 	- rm -R $(PACKAGE_DIR)/mac
 	mkdir $(PACKAGE_DIR)/mac

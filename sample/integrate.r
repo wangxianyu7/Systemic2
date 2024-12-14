@@ -6,7 +6,7 @@
 # ======================================================================
 
 # Path to the systemic loader script, fix it to your install location
-systemic.rpath <- "../R/systemic.r"
+systemic.rpath <- "~/Projects/Systemic2/R/systemic.r"
 # Load package
 source(systemic.rpath, chdir=TRUE)
 # This script will print and plot its result; set noisy to FALSE

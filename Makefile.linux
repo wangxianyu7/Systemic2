@@ -14,8 +14,8 @@ INCLUDES = -I./deps/include      # -I/my/path
 LIBNAMES = -lm -lgsl -lgslcblas -lgomp -lc -lswift -lf2c -lgfortran
 
 
-OPTIMIZED_FLAGS = -g -fPIC -O3 $(INCLUDES) $(LIBS) -fopenmp -std=c99 
-DEBUG_FLAGS =  $(INCLUDES) $(LIBS) -Wall -fopenmp -std=c99 -g3 -fPIC
+OPTIMIZED_FLAGS = -g -fPIC -O3 $(INCLUDES) $(LIBS) -fopenmp -std=gnu99 
+DEBUG_FLAGS =  $(INCLUDES) $(LIBS) -Wall -fopenmp -std=gnu99 -g3 -fPIC
 SYSFLAGS=$(OPTIMIZED_FLAGS)
 FFLAGS='-c -g -fPIC'
 

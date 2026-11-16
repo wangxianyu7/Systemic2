@@ -1,0 +1,26 @@
+# Docker uses THIS file (not .gitignore) to pick the build context, so local build
+# junk must be excluded here explicitly. The image rebuilds everything from source:
+# deps/ is recreated inside the image by `tar xzf deps.tar.gz` (clean source), and
+# libsystemic.so / f2c / swift are compiled by the Dockerfile. Carrying the host's
+# locally-built (possibly wrong-arch or incomplete) artifacts in would only shadow
+# that — notably the repo's stale deps/f2c/libf2c.a, which lacks s_wsfe.
+.git
+.gitignore
+
+# local build artifacts — rebuilt in-image from source
+deps/
+objects/
+**/*.o
+**/*.a
+**/*.so
+**/*.dylib
+**/*.class
+libsystemic.*
+
+# macOS / editor / run noise
+**/.DS_Store
+*.bak
+prefs.txt*
+Rplots.pdf
+Systemic-mac.sh
+autosave/

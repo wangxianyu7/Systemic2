@@ -1,6 +1,8 @@
 # Systemic 2 #
 Systemic 2 is a C library for analyzing exoplanetary time series. The full distribution of Systemic also includes an R package to interface with the library, and a cross-platform GUI to perform interactive analysis.
 
+**Try it online (no install):** https://www.stefanom.org/systemic-online/
+
 ## Run in Docker (browser GUI) ##
 
 The recommended way to run Systemic. A native host toolchain is no longer needed

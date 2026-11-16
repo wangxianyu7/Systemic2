@@ -100,6 +100,6 @@ RUN tar xzf deps.tar.gz \
 
 RUN cp docker/entrypoint.sh /usr/local/bin/entrypoint.sh && chmod +x /usr/local/bin/entrypoint.sh
 
-ENV SCREEN=1280x800x24 PORT=8080
+ENV SCREEN=1920x1080x24 PORT=8080
 EXPOSE 8080
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

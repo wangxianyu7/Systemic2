@@ -34,12 +34,12 @@ for files):
 ```bash
 docker run --rm -p 8080:8080 \
   -v "/path/on/host/mydata:/opt/Systemic/datafiles/external" \
-  -e SCREEN=1920x1080x24 \
   systemic:2.2000
 ```
 
 Open `/opt/Systemic/datafiles/external/` from the GUI (File → Open) or Thunar.
-`SCREEN` sets the desktop resolution; match it to your monitor to fill the window.
+The desktop defaults to 1920x1080; set `-e SCREEN=2560x1440x24` (or your monitor's
+resolution) to fill a larger window.
 
 ### Notes on the build (fixes applied) ###
 
